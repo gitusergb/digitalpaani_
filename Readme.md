@@ -1,11 +1,11 @@
 
-## DigitalPaani_BMS_BE
+## DigitalPaani_BMS_BE(Book Management System)
 
 ## Render link : https://digitalpaani.onrender.com/
 
 ### swagger : http://localhost:7000/apidocs/#/
 
-## Overview
+## Overview/Introduction
 - A simple book management API using Node JS. 
 - The API offer these functionalities: User authentication. 
 - CRUD operations for managing book entries (e.g., title, author, publication year). 
@@ -14,16 +14,21 @@
 - Implemented basic security measures (like input validation). 
 
 
-## Installation
+## Installation and Getting started
 
-1. Clone the repository: `git clone [https://github.com/gitusergb/digitalpaani_.git]`
+1. Clone the Backend repository: `git clone [https://github.com/gitusergb/digitalpaani_.git]`
 2. Navigate to the project directory: `cd digitalpaani_be`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
 
+## Technology Stack
+- Node.js
+- Express.js
+- MongoDB
 
 
 
+## API Endpoints
 <details>
 <summary>
 
@@ -37,7 +42,6 @@
 
 ```
 POST : http://localhost:7000/users/register
-
 {"username":"admin",
 "email":"admin@gmail.com",
 "password":"admin",
@@ -60,7 +64,6 @@ POST : http://localhost:7000/users/register
 ### user
 ```
 POST : http://localhost:7000/users/register
-
 {"username":"user1234",
 "email":"user1234@gmail.com",
 "password":"user1234",
@@ -95,7 +98,6 @@ POST :http://localhost:7000/users/login
 {
 "email":"admin@gmail.com",
 "password":"admin"}
-
 {
     "msg": "Login successful!",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NWQzNTFkOTVkOGE4ODQwNDBmYjU0MGMiLCJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzA4MzQ4MzQxfQ.JEazHNCspFdguDj6axI4JYFNUiglopLvh_IcZsDqEy0"
@@ -105,7 +107,6 @@ POST :http://localhost:7000/users/login
 ### User Login
 ```
 POST :http://localhost:7000/users/login
-
 {
 "email":"user1234@gmail.com",
 "password":"user1234"}
@@ -127,7 +128,6 @@ POST :http://localhost:7000/users/login
 
 ```
 POST : http://localhost:7000/books/addbook
-
 {
     "title": "The Power of Now",
     "author" : "Eckhart Tolle",
@@ -167,9 +167,7 @@ POST : http://localhost:7000/books/addbook
 <summary>
 
   ## Read 
-
 </summary>
-<br>
 
 ### user section 
 ```
@@ -310,7 +308,6 @@ J.K. Rowling
 
  ## Update 
 </summary>
-<br>
 
 ### user section 
 ### Book section
@@ -321,7 +318,6 @@ J.K. Rowling
 
  ## Delete
 </summary>
-<br>
 
 ### user section 
 ### Book section
