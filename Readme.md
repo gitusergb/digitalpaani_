@@ -1,7 +1,7 @@
 
 ## DigitalPaani_BMS_BE
 
-## Render link : 
+## Render link : https://digitalpaani.onrender.com/
 
 ### swagger : http://localhost:7000/apidocs/#/
 
