@@ -81,8 +81,6 @@ POST : http://localhost:7000/users/register
 ```
 
 </details>
-
-
 <details>
 <summary>
 
@@ -104,7 +102,6 @@ POST :http://localhost:7000/users/login
 }
 
 ```
-
 ### User Login
 ```
 POST :http://localhost:7000/users/login
@@ -120,7 +117,6 @@ POST :http://localhost:7000/users/login
 
 ```
 </details>
-
 
 <details>
 <summary>
@@ -166,8 +162,6 @@ POST : http://localhost:7000/books/addbook
 
 ```
 </details>
-
----
 
 <details>
 <summary>
@@ -309,51 +303,34 @@ J.K. Rowling
 }
 
 ```
-
-
 </details>
-
----
-
 
 <details>
 <summary>
 
  ## Update 
-
 </summary>
 <br>
 
 ### user section 
-
-
 ### Book section
-
-
 </details>
-
----
 
 <details>
 <summary>
 
  ## Delete
-
 </summary>
 <br>
 
 ### user section 
-
-
 ### Book section
 ```
 DELETE : http://localhost:7000/books/delete/:bookID
-
 {
     "msg": "book with Id:65d37f0c976ae3be7c354d00 has been deleted"
 }
 ```
-
 </details>
 
 ---
