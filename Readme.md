@@ -30,6 +30,8 @@
 
 ![swagger](https://i.ibb.co/xFcKpLC/swagger.png)
 
+![swagger1](https://i.ibb.co/5x1C2cw/books.png)
+
 
 ## API Endpoints
 <details>
@@ -86,7 +88,7 @@ POST : http://localhost:7000/users/register
 }
 ```
 </details>
-![swagger](https://i.ibb.co/5x1C2cw/books.png)
+
 
 <details>
 <summary>
