@@ -5,6 +5,7 @@
 
 ### swagger : http://localhost:7000/apidocs/#/
 
+
 ## Overview/Introduction
 - A simple book management API using Node JS. 
 - The API offer these functionalities: User authentication. 
@@ -27,6 +28,7 @@
 - Express.js
 - MongoDB
 
+![swagger](https://i.ibb.co/xFcKpLC/swagger.png)
 
 
 ## API Endpoints
@@ -83,8 +85,9 @@ POST : http://localhost:7000/users/register
     }
 }
 ```
-
 </details>
+![swagger](https://i.ibb.co/5x1C2cw/books.png)
+
 <details>
 <summary>
 

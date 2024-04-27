@@ -4,97 +4,116 @@ const { getUser,registerUser,loginUser,logoutUser,borrowbook,getProfile,borrow_b
 
 const userRouter = express.Router();
 
-// /**
-//   * @swagger
-//   * components:
-//   *   schemas:
-//   *         User:
-//   *             type:object
-//   *             properties:
-//   *                     id:
-//   *                         type: object
-//   *                         description: The auto-generated id of the user
-//   *                     username:
-//   *                         type: string
-//   *                         description: The user name
-//   *                     email:
-//   *                         type: string
-//   *                         description: Age of the user
-//   *                     password:
-//   *                         type: string
-//   *                         description: The user city
-//   *                     role:
-//   *                         type: string
-//   *                         description: user role
-//   */
+/** POST Methods */
+    /**
+     *  @swagger
+     * '/users/register':
+     *  post:
+     *     tags:
+     *     - User Controller
+     *     summary: Create a user
+     *     requestBody:
+     *      required: true
+     *      content:
+     *        application/json:
+     *           schema:
+     *            type: object
+     *            required:
+     *              - username
+     *              - email
+     *              - password
+     *              - role
+     *            properties:
+     *              username:
+     *                type: string
+     *                default: Gauri
+     *              email:
+     *                type: string
+     *                default: gauri@gmail.com
+     *              password:
+     *                type: string
+     *                default: gauri123!@
+     *              role:
+     *                type: string
+     *                default: student
+     *     responses:
+     *      201:
+     *        description: Created
+     *      409:
+     *        description: Conflict
+     *      404:
+     *        description: Not Found
+     *      500:
+     *        description: Server Error
+     */
 
-//  /**
-//   * @swagger
-//   * tags:
-//   *  name: User
-//   *  description: All the API routes related to User
-//   */
- 
-
-//  /**
-//   * @swagger
-//   * /users:
-//   *  get:
-//   *      summary: This will get all the user data from the database
-//   *      tags: [user]
-//   *      responses:
-//   *          200:
-//   *               description: The list of all the users
-//   *               content:
-//   *                   application/json:
-//   *                       schema:
-//   *                           type: array
-//   *                           item:
-//   *                               $ref: "#/components/schemas/User"
-//   *
-//   */
-
-
-// /**
-// * @swagger
-// * /users/register:
-// *   post:
-// *         summary: To post the details of a new user
-// *         tags: [User]
-// *         requestBody:
-// *            required: true
-// *            content:
-// *               application/json:
-// *                 schema:
-// *                    $"ref": '#/components/schemas/User'
-// *         responses:
-// *           200:
-// *             description: The user was successfully registered
-// *             content:
-// *               application/json:
-// *                 schema:
-// *                   $ref: '#/components/schemas/User'
-// *           500:
-// *             description: Some server error
-// */
+userRouter.post('/register', registerUser);
 
 
 /**
- * @swagger
- * /users:
- *   get:
- *     summary: This will get all the user data from the database
- *     description: Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API.
- *     tags: [user]
-*/
-userRouter.post('/register', registerUser);
+     * @swagger
+     * '/users/login':
+     *  post:
+     *     tags:
+     *     - User Controller
+     *     summary: Login as a user
+     *     requestBody:
+     *      required: true
+     *      content:
+     *        application/json:
+     *           schema:
+     *            type: object
+     *            required:
+     *              - username
+     *              - password
+     *            properties:
+     *              username:
+     *                type: string
+     *                default: gauri@gmail.com
+     *              password:
+     *                type: string
+     *                default: gauri123!@
+     *     responses:
+     *      201:
+     *        description: Created
+     *      409:
+     *        description: Conflict
+     *      404:
+     *        description: Not Found
+     *      500:
+     *        description: Server Error
+     */
 userRouter.post('/login', loginUser);
+
 userRouter.get('/logout', auth,logoutUser);
 //////////////////////////////////////////
+
+/** GET Methods */
+    /**
+     * @swagger
+     * '/users/':
+     *  get:
+     *     tags:
+     *     - User Controller
+     *     summary: Get all users 
+     *     responses:
+     *      200:
+     *        description: Fetched Successfully
+     *      400:
+     *        description: Bad Request
+     *      404:
+     *        description: Not Found
+     *      500:
+     *        description: Server Error
+     */
 userRouter.get('/',auth,getUser);
+
 userRouter.post("/borrow",auth,borrowbook);
+
 userRouter.get("/profile",auth,getProfile)
+
 userRouter.get("/borrowed-books",auth,borrow_books);
+
 userRouter.post("/return",returnb);
 /////////////////////////////////////////
 

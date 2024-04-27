@@ -4,10 +4,8 @@ require('dotenv').config();
 const dotenv = require('dotenv');
 const express = require('express');
 const mongoose = require('mongoose');
-
-const swaggerJSdoc=require("swagger-jsdoc")
 const swaggerUi=require("swagger-ui-express")
-
+const swaggerJSdoc=require("swagger-jsdoc")
 
 const {connection} = require("./connection")
 const {userRouter}= require("./Routes/user.routes");
@@ -20,29 +18,34 @@ app.use(cors())
 
 
 const options = {
-  definition: {
-    openapi: '3.0.0',
-    info: {
-      title: 'Book Management System',
-      version: '1.0.0',
-      description:
-      'This is a REST API application made with Express. It retrieves data from JSONPlaceholder.',
+    definition: {
+      openapi: '3.0.0',
+      language: 'en-US',      // Change response language. By default is 'en-US'
+      info: {
+        title: 'Book Management System',
+        version: '1.0.0',
+        description:
+        'This is a REST API application made with Express. It retrieves data from JSONPlaceholder.',
+      },
+      servers:[
+        {
+            url:"http://localhost:7000",
+            description: 'Development server',
+        }
+      ]
     },
-    servers:[
-      {
-          url:"http://localhost:7000",
-          description: 'Development server',
-      }
-    ]
-  },
-  apis:["./routes/*.js"],
-};
+    apis:["./routes/*.js"],// Path to the API routes in your Node.js application
+  };
+  
+  const swaggerSpec = swaggerJSdoc(options);
 
-const swaggerSpec = swaggerJSdoc(options);
+// Serve Swagger documentation
 app.use('/apidocs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+// API routes 
 app.use("/users",userRouter)
 app.use("/books",bookRouter)
+
 app.use(express.static('Public'));
 
   const PORT = process.env.PORT || 3000;
